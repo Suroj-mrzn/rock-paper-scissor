@@ -1,0 +1,71 @@
+/* Reset default margins and set up a clean, modern font */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Style the main heading */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+
+.container {
+    display: flex;
+    gap: 20px; /* Spacing between buttons */
+    margin-bottom: 2rem;
+}
+
+/* Style the buttons */
+button {
+    font-size: 3.5rem; 
+    padding: 15px 25px;
+    background-color: hsl(227, 80%, 64%);
+    border: 2px solid #e0e0e0;
+    border-radius: 200px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Hover and active states for the buttons */
+button:hover {
+    transform: translateY(-4px); 
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+    background-color: hsl(227, 80%, 74%);
+    border-color: hsl(0, 4%, 75%); 
+}
+
+button:active {
+    transform: translateY(1px); 
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Styles for Player and Computer score/choice displays */
+#PlayerDisplay, #ComputerDisplay {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 8px 0;
+    color: #34495e;
+}
+
+
+#Result {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    color: #2ecc71; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
