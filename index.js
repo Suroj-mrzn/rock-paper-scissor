@@ -4,6 +4,10 @@ const choices= ["rock", "paper", "scissor"];
 const PlayerDisplay = document.getElementById("PlayerDisplay");
 const ComputerDisplay = document.getElementById("ComputerDisplay");
 const resultDisplay = document.getElementById("Result");
+const PlayerScoreDisplay = document.getElementById("PlayerScoreDisplay");
+const ComputerScoreDisplay = document.getElementById("ComputerScoreDisplay");
+let PlayerScore = 0;
+let ComputerScore = 0;
 
 function play(PlayerChoice){
 
@@ -31,11 +35,35 @@ function play(PlayerChoice){
                  break;
         }
     }
+    
     PlayerDisplay.textContent = `PLAYER: ${PlayerChoice}`;
-    ComputerDisplay.textContent = `COMPTER: ${ComputerChoice}`;
+    ComputerDisplay.textContent = `COMPUTER: ${ComputerChoice}`;
     resultDisplay.textContent = result;
+    resultDisplay.style.display = "block";
+
+    resultDisplay.classList.remove("greentext", "redtext");
+    
+    switch(result){
+        case "You win.":
+            resultDisplay.classList.add("greentext");
+            PlayerScore++;
+            PlayerScoreDisplay.textContent = PlayerScore;
+            break;
+
+        case "You lose.":
+            resultDisplay.classList.add("redtext");
+             ComputerScore ++;
+             ComputerScoreDisplay.textContent = ComputerScore;
+            break;
+    }
 }
-//RESULT NOT sHOWING FIX
-//ADD SCORE DISPLAYs
-//IDK BETTER CSS 
-//
+    function resetGame()
+     {
+    PlayerScore = 0;
+    ComputerScore = 0;
+    PlayerScoreDisplay.textContent = 0;
+    ComputerScoreDisplay.textContent = 0;
+    resultDisplay.style.display = "none";
+    PlayerDisplay.textContent = "PLAYER: ";
+    ComputerDisplay.textContent = "COMPUTER: "; 
+}
